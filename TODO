@@ -1,0 +1,18 @@
+# Funcionalidades
+
+Crear usuario
+	Modelo usurio
+	Passport y passport-http
+	Vista registro de usuario
+	
+
+Login usuario
+
+Pedido de Pizza
+	Modelo pedido
+
+Gracias por hacer su pedido, puede ver el estado en la siguiente direccion
+
+Administración de pedidos: En espera, preparacion, horno, listo.
+
+Envio de email al preparar un pedido.

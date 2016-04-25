@@ -1,0 +1,40 @@
+extends layout
+
+block head
+  link(rel='stylesheet', href='/stylesheets/cover.css')
+  
+block content
+  //- h1= title
+  //- p Welcome to #{title}
+  
+  .site-wrapper
+    .site-wrapper-inner
+      .cover-container
+        .masthead.clearfix
+          .inner
+            h3.masthead-brand Pizza Condor
+            - var active = 'index'
+            include ./menu.jade
+        .inner.cover
+          h1.cover-heading Gracias por realizar tu pedido
+          h4 ID de pedido: #{order._id}
+          h4 Usuario: #{order.customer.username}
+          h4 Hora de pedido: #{order.order_date}
+          h4 Pizza: #{order.pizza}
+          h3 Estado del pedido: #{order.state}
+          h4 Notificación por email: 
+            if order.email_on_ready
+              | Si
+            else
+              | No
+          
+          //- p.lead
+            | Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.
+          //- p.lead
+            a.btn.btn-lg.btn-default(href='#') Learn more
+        .mastfoot
+          .inner
+            p
+              | Web creada por 
+              a(href='http://carloscondor.com') J.Carlos Delgado
+              | .

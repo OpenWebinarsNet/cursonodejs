@@ -1,0 +1,15 @@
+nav
+  ul.nav.masthead-nav
+    li(class=active=='index'?'active':'normal')
+      a(href='/') Inicio
+    li(class=active=='order'?'active':'normal')
+      a(href='/order') Realizar pedido
+    li(class=active=='admin'?'active':'normal')
+      a(href='/admin') Administrar pedidos 
+    if !user
+      li(class=active=='login'?'active':'normal')
+        a(href="/user/login") Login
+
+    if user
+      li
+        h4 Hola #{user.username}

@@ -1,0 +1,39 @@
+extends layout
+
+block head
+  link(rel='stylesheet', href='/stylesheets/cover.css')
+  
+block content
+  //- h1= title
+  //- p Welcome to #{title}
+  
+  .site-wrapper
+    .site-wrapper-inner
+      .cover-container
+        .masthead.clearfix
+          .inner
+            h3.masthead-brand Pizza Condor
+            - var active = 'admin'
+            include ./menu.jade
+        .inner.cover
+          h1.cover-heading Lista de pedidos
+          table.table
+            thead
+              tr
+                th Usuario
+                th Fecha
+                th Estado del pedido
+                th Aviso por email
+                th Cambiar estado
+            tbody
+              each order in orders
+                tr
+                  td #{order.customer.username}
+                  td #{order.order_date}
+                  td #{order.state}
+                  td #{order.email_on_ready}
+                  td
+                    a(href='/admin/order/#{order._id}/pending') Pending 
+                    a(href='/admin/order/#{order._id}/preparing') Preparing 
+                    a(href='/admin/order/#{order._id}/ready') Ready
+
